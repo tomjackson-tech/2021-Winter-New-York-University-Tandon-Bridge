@@ -1,0 +1,92 @@
+\documentclass[11pt]{article}
+\usepackage{fullpage}
+\usepackage{amsmath,amsfonts,amsthm,amssymb}
+\usepackage{url}
+\usepackage[demo]{graphicx}
+\usepackage{caption} 
+\usepackage{algpseudocode}
+\usepackage{bbm}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{enumitem}
+\usepackage{commath}
+\usepackage{color}
+\usepackage[colorlinks=true, linkcolor=red, urlcolor=blue, citecolor=blue]{hyperref}
+\usepackage{tikz}
+\usetikzlibrary{shapes.geometric,fit}
+
+\topmargin 0pt
+\advance \topmargin by -\headheight
+\advance \topmargin by -\headsep
+\textheight 8.9in
+\oddsidemargin 0pt
+\evensidemargin \oddsidemargin
+\marginparwidth 0.5in
+\textwidth 6.5in
+
+\parindent 0in
+\parskip 1.5ex
+
+
+\DeclareMathOperator*{\R}{\mathbb{R}}\relax
+\DeclareMathOperator*{\Z}{\mathbb{Z}}\relax
+\newcommand{\suchthat}{\;\ifnum\currentgrouptype=16 \middle\fi|\;}
+\newcommand{\homework}[2]{
+	\noindent
+	\begin{center}
+		\framebox{
+			\vbox{
+				\hbox to 6.50in { {\bf NYU Computer Science Bridge to Tandon Course} \hfill Winter 2021 }
+				\vspace{4mm}
+				\hbox to 6.50in { {\Large \hfill Homework #1  \hfill} }
+				\vspace{2mm}
+				\hbox to 6.50in { {Name: #2 \hfill} }
+			}
+		}
+	\end{center}
+	\vspace*{4mm}
+}
+
+\begin{document}
+	
+	% set up the header box
+	\homework{6}{Lin, Kuan-You}
+	% question 3
+	\section*{Question 5} 
+	\textbf{Use the definition of $\Theta$ in order to show the following:}\\
+	\begin{enumerate}[label=(\alph*)]
+		\item $5n^3 + 2n^2 + 3n = \Theta (n^3)$ \\
+		
+			\textit{solution: } \\
+				By the definition of $\Theta$: Let f and g be two functions $\Z^+$ to $\Z^+$. $f = \Theta(g)$ if $f = O(g)$ and $f = \Omega(g)$.
+				We will show that $5n^3 + 2n^2 + 3n = O(n^3)$ and $5n^3 + 2n^2 + 3n = \Omega(n^3)$. \\
+				
+				Select $n_0 = 1$ and $c = 10$ such that for $n \geq n_0$, $5n^3 + 2n^2 + 3n \leq cn^3$.\\
+				When $n \geq n_0 = 1$, $2n^3 \geq 2n^2$ and $3n^3 \geq 3n$. 
+				Thus for $ n \geq 1$, $10n^3 = 5n^3 + 2n^3 + 3n^3 \geq 5n^3 + 2n^2 + 3n $ and $ f = O(n^3)$. \\ 
+				
+				Select $n_0 = 1$ and $c = 5$ such that for $n \geq n_0$, $f(n) = 5n^3 + 2n^2 + 3n \geq cn^3$.\\
+				When $n \geq n_0 = 1$, $2n^2 \geq 1$ and $3n \geq 1$. Thus for $ n \geq 1$, $5n^3 + 2n^2 + 3n \geq 5n^3$ and $ f = \Omega(n^3)$. $\blacksquare$\\
+								
+		\item $\sqrt{7n^2 +2n-8} = \Theta (n)$ \\
+		
+			\textit{solution: } \\
+				By the definition of $\Theta$: Let f and g be two functions $\Z^+$ to $\Z^+$. $f = \Theta(g)$ if $f = O(g)$ and $f = \Omega(g)$.
+				We will show that $\sqrt{7n^2 +2n-8} = O(n)$ and $\sqrt{7n^2 +2n-8}  = \Omega(n)$. \\
+				
+				Select $n_0 = 1$ and $c = \sqrt{16}$ such that for $n \geq n_0$, $\sqrt{7n^2 +2n-8} \leq cn  = \sqrt{(cn)^2}$.\\
+				When $n \geq n_0 = 1$, $2n^2 \geq 2n$ and $8n^2 > -8$. 
+				Thus for $ n \geq 1$, $16n^2 = 7n^2 + 2n^2 + 8n^2 > 7n^2 +2n-8 > 0$, $\sqrt{16}n = \sqrt{16n^2} > \sqrt{7n^2 +2n-8}$, and $f = O(n)$.\\
+				
+				When $n \geq 0 $, $2n \geq 0$, $\sqrt{7n^2 +2n-8} \geq \sqrt{7n^2-8}  $. 
+				Select $c = \sqrt{\frac{7}{2}}$, $\sqrt{\frac{7}{2}n^2 + (\frac{7}{2}n-8)} \geq \sqrt{\frac{7}{2}n^2}$ as long as $(\frac{7}{2}n^2-8) \geq 0$.
+				We have $(\frac{7}{2}n^2-8) \geq (\frac{7}{2}n^2-8n)$ because $n \geq 0$. Then we have $(\frac{7}{2}n^2-8n) = n(\frac{7}{2}n-8)$.
+				Since $n \geq 0$, we only need to make sure $(\frac{7}{2}n-8)$ is geater than 0, then
+				we can guarantee that  $(\frac{7}{2}n^2-8) \geq 0$ and $\sqrt{7n^2 +2n-8} \geq \sqrt{\frac{7}{2}n^2}$.
+				Thus we select $n_0 = \frac{16}{7}$ such that for $n \geq n_0$, $f(n) = \sqrt{7n^2 +2n-8}  \geq cn$ and $ f = \Omega(n)$. $\blacksquare$\\
+				
+			 
+								
+	\end{enumerate}
+		
+\end{document}
