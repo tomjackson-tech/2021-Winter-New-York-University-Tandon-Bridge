@@ -49,7 +49,7 @@ int minInArray2(int arr[], int low, int high){
     } else {
         if (arr[low] < arr[high]){
             return minInArray2(arr, low, high - 1);
-        } else if (arr[low] > arr[high]) {
+        } else {
             return minInArray2(arr, low + 1, high);
         }
     }
