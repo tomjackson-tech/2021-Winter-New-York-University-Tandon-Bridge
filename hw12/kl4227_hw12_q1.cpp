@@ -208,7 +208,7 @@ ostream& operator <<(ostream& outs, const Money& amount){
     cents = positive_cents % 100;
 
     if (amount.all_cents < 0)
-        outs << "- $" << dollars << '.';
+        outs << "-$" << dollars << '.';
     else
         outs << "$" << dollars << '.';
 
@@ -302,6 +302,7 @@ int main() {
 
     cout << endl << "List of all cashed checks:" << endl;
     cout << "Number\tAmount\tCashed Status" << endl;
+    sort(vector_check.begin(), vector_check.end());
     for(Check n: vector_check){
         if (n.get_cash_status() == 'Y'){
             cout << n;
