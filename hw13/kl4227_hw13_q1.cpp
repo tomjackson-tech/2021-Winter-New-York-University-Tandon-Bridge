@@ -16,9 +16,9 @@ int NUMBER_DOODLEBUG = 20;
 int NUMBER_ANT = 100;
 int MATRIX_X = 20;
 int MATRIX_Y = 20;
-
 int ANT_TIME_TO_BREED = 3;
 int DOODLEBUG_TIME_TO_BREED = 8;
+
 class Organism{
 protected:
     int age;
