@@ -12,7 +12,7 @@ Predator-Prey Environment, Please refer to the documentation.
 #include <cstdlib>
 #include <ctime>
 
-int NUMBER_DOODLEBUG = 20;
+int NUMBER_DOODLEBUG = 5;
 int NUMBER_ANT = 100;
 int MATRIX_X = 20;
 int MATRIX_Y = 20;
