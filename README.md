@@ -1,5 +1,5 @@
-# 2021 Winter
 # New York University Tandon School of Engineering Bridge Program
+2021 Winter Term
 
 ## Program Pre-requisites
 Students must complete undergraduate study before taking the CS Bridge Program.
