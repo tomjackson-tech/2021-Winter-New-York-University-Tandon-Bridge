@@ -45,8 +45,8 @@ bool checkBalance(std::ifstream& file){
 
     while(file >> temp){
         if (temp == "begin") toggle = true;
-        if (temp == "end") return true;
         if (toggle) {
+            if ((temp == "end") && (record.empty())) return true;
             for (char t : temp){
                 if ((t == '(') || (t == '{') || (t == '[')) record.push(t);
                 else if ((t == ')') || (t == '}') || (t == ']')) {
